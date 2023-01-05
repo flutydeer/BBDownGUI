@@ -1,0 +1,331 @@
+﻿<ui:UiPage
+    x:Class="BBDownGUI.Views.Pages.DashboardPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:BBDownGUI.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="DashboardPage"
+    d:DataContext="{d:DesignInstance local:DashboardPage, IsDesignTimeCreatable=False}"    d:DesignHeight="256"
+    d:DesignWidth="512"
+    d:Background="{DynamicResource ApplicationBackgroundBrush}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    Scrollable="True"
+    mc:Ignorable="d">
+
+    <TabControl Margin="18">
+        <TabItem Header="基本">
+            <VirtualizingStackPanel Margin="18,0,18,18" IsVirtualizing="True" VirtualizationMode="Recycling">
+
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock 
+                        Grid.Column="0" Text="视频地址" VerticalAlignment="Center"/>
+                    <ui:TextBox Grid.Column="1" Text="" Margin="8, 0, 0, 0" HorizontalAlignment="Stretch"/>
+                </Grid>
+                <Grid Height="48">
+                    <TextBlock Text="解析模式" VerticalAlignment="Center"/>
+                    <ComboBox HorizontalAlignment="Right" VerticalAlignment="Center" SelectedIndex="0" Margin="0, 8, 0, 0">
+                        <ComboBoxItem Content="APP 端"/>
+                        <ComboBoxItem Content="TV 端"/>
+                        <ComboBoxItem Content="国际版"/>
+                    </ComboBox>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="视频编码选择优先级" VerticalAlignment="Center"/>
+                    <ui:TextBox Grid.Column="1" Text="hevc,av1,avc" Margin="8, 0, 0, 0" HorizontalAlignment="Stretch"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="下载内容" VerticalAlignment="Center"/>
+                    <ComboBox Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" SelectedIndex="0" Margin="0, 8, 0, 0">
+                        <ComboBoxItem Content="完整"/>
+                        <ComboBoxItem Content="仅下载视频"/>
+                        <ComboBoxItem Content="仅下载音频"/>
+                        <ComboBoxItem Content="仅下载字幕"/>
+                    </ComboBox>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="工作目录" VerticalAlignment="Center"/>
+                    <ui:TextBox Grid.Column="1" Text="" Margin="8, 0, 0, 0" HorizontalAlignment="Stretch"/>
+                </Grid>
+            </VirtualizingStackPanel>
+        </TabItem>
+        <TabItem Header="高级">
+            <VirtualizingStackPanel Margin="18,0,18,18" IsVirtualizing="True" VirtualizationMode="Recycling">
+                <Grid Height="48">
+                    <TextBlock Text="使用 MP4Box 来混流" VerticalAlignment="Center"/>
+                    <ui:ToggleSwitch IsChecked="False" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="画质优先级" VerticalAlignment="Center"/>
+                    <ui:TextBox Grid.Column="1" Text="" Margin="8, 0, 0, 0" HorizontalAlignment="Stretch"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="仅解析而不进行下载" VerticalAlignment="Center"/>
+                    <ui:ToggleSwitch Grid.Column="1" IsChecked="False" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="展示所有分P标题" VerticalAlignment="Center"/>
+                    <ui:ToggleSwitch Grid.Column="1" IsChecked="False" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="调用 aria2c 进行下载" VerticalAlignment="Center"/>
+                    <ui:ToggleSwitch Grid.Column="1" IsChecked="False" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="交互式选择清晰度" VerticalAlignment="Center"/>
+                    <ui:ToggleSwitch Grid.Column="1" IsChecked="False" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="不要显示所有可用音视频流" VerticalAlignment="Center"/>
+                    <ui:ToggleSwitch Grid.Column="1" IsChecked="False" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="使用多线程下载" VerticalAlignment="Center"/>
+                    <ui:ToggleSwitch Grid.Column="1" IsChecked="True" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="输出调试日志" VerticalAlignment="Center"/>
+                    <ui:ToggleSwitch Grid.Column="1" IsChecked="False" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="跳过混流步骤" VerticalAlignment="Center"/>
+                    <ui:ToggleSwitch Grid.Column="1" IsChecked="False" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="跳过字幕下载" VerticalAlignment="Center"/>
+                    <ui:ToggleSwitch Grid.Column="1" IsChecked="False" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="跳过封面下载" VerticalAlignment="Center"/>
+                    <ui:ToggleSwitch Grid.Column="1" IsChecked="False" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="强制使用 HTTP 替换 HTTPS" VerticalAlignment="Center"/>
+                    <ui:ToggleSwitch Grid.Column="1" IsChecked="True" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="下载弹幕" VerticalAlignment="Center"/>
+                    <ui:ToggleSwitch Grid.Column="1" IsChecked="False" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="跳过AI字幕下载" VerticalAlignment="Center"/>
+                    <ui:ToggleSwitch Grid.Column="1" IsChecked="False" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="比特率升序（最小体积优先）" VerticalAlignment="Center"/>
+                    <ui:ToggleSwitch Grid.Column="1" IsChecked="False" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="自定义单 P 存储文件名" VerticalAlignment="Center"/>
+                    <ui:TextBox Grid.Column="1" Text="" Margin="8, 0, 0, 0" HorizontalAlignment="Stretch"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="自定义多 P 存储文件名" VerticalAlignment="Center"/>
+                    <ui:TextBox Grid.Column="1" Text="" Margin="8, 0, 0, 0" HorizontalAlignment="Stretch"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="指定分 P 或范围" VerticalAlignment="Center"/>
+                    <ui:TextBox Grid.Column="1" Text="" Margin="8, 0, 0, 0" HorizontalAlignment="Stretch"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="混流的音频语言（代码）" VerticalAlignment="Center"/>
+                    <ui:TextBox Grid.Column="1" Text="" Margin="8, 0, 0, 0" HorizontalAlignment="Stretch"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="字符串 cookie" VerticalAlignment="Center"/>
+                    <ui:TextBox Grid.Column="1" Text="" Margin="8, 0, 0, 0" HorizontalAlignment="Stretch"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="access token" VerticalAlignment="Center"/>
+                    <ui:TextBox Grid.Column="1" Text="" Margin="8, 0, 0, 0" HorizontalAlignment="Stretch"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="调用 aria2c 的附加参数" VerticalAlignment="Center"/>
+                    <ui:TextBox Grid.Column="1" Text="" Margin="8, 0, 0, 0" HorizontalAlignment="Stretch"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="ffmpeg 路径" VerticalAlignment="Center"/>
+                    <ui:TextBox Grid.Column="1" Text="" Margin="8, 0, 0, 0" HorizontalAlignment="Stretch"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="mp4box 路径" VerticalAlignment="Center"/>
+                    <ui:TextBox Grid.Column="1" Text="" Margin="8, 0, 0, 0" HorizontalAlignment="Stretch"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="aria2c 的路径" VerticalAlignment="Center"/>
+                    <ui:TextBox Grid.Column="1" Text="" Margin="8, 0, 0, 0" HorizontalAlignment="Stretch"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="下载合集分 P 的间隔时间（秒）" VerticalAlignment="Center"/>
+                    <ui:NumberBox Grid.Column="1" Value="0" Min="0" Step="1" IntegersOnly="True" Margin="8, 0, 0, 0" HorizontalAlignment="Stretch"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="BiliPlus host" VerticalAlignment="Center"/>
+                    <ui:TextBox Grid.Column="1" Text="" Margin="8, 0, 0, 0" HorizontalAlignment="Stretch"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="BiliPlus EP host" VerticalAlignment="Center"/>
+                    <ui:TextBox Grid.Column="1" Text="" Margin="8, 0, 0, 0" HorizontalAlignment="Stretch"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="BiliPlus EP host" VerticalAlignment="Center"/>
+                    <ui:TextBox Grid.Column="1" Text="" Margin="8, 0, 0, 0" HorizontalAlignment="Stretch"/>
+                </Grid>
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="192"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="BBDown 本地配置文件" VerticalAlignment="Center"/>
+                    <ui:TextBox Grid.Column="1" Text="" Margin="8, 0, 0, 0" HorizontalAlignment="Stretch"/>
+                </Grid>
+            </VirtualizingStackPanel>
+        </TabItem>
+    </TabControl>
+
+    <!--<Grid Margin="56,0" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        -->
+    <!--<ui:Button Grid.Column="0" Command="{Binding ViewModel.CounterIncrementCommand, Mode=OneWay}" Content="Clicks me!" Icon="Fluent24" />
+        <TextBlock Grid.Column="1" Margin="12,0,0,0" VerticalAlignment="Center" Text="{Binding ViewModel.Counter, Mode=OneWay}" />-->
+    <!--
+    </Grid>-->
+
+</ui:UiPage>
